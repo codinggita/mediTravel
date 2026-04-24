@@ -120,11 +120,7 @@ meditravel-assist/
 * 📞 24/7 emergency helpline
 * 💳 Insurance integration
 
----
 
-## 📷 Demo / Screenshots
-
-(Add your screenshots or live demo link here)
 
 ---
 
