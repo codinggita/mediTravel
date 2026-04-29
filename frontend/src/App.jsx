@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Page Imports
+import Onboarding from './pages/Onboarding';
+import Home from './pages/Home';
+import SearchResults from './pages/SearchResults';
+import DoctorProfile from './pages/DoctorProfile';
+import Emergency from './pages/Emergency';
+import Profile from './pages/Profile';
+import Favorites from './pages/Favorites';
+import Booking from './pages/Booking';
+import Messages from './pages/Messages';
+
+// Component Imports
+import Navbar from './components/Navbar';
+
+const PageTransition = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, x: 10 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -10 }}
+    transition={{ duration: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Onboarding /></PageTransition>} />
+        <Route path="/home" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/search" element={<PageTransition><SearchResults /></PageTransition>} />
+        <Route path="/doctor/:id" element={<PageTransition><DoctorProfile /></PageTransition>} />
+        <Route path="/booking/:doctorId" element={<PageTransition><Booking /></PageTransition>} />
+        <Route path="/messages" element={<PageTransition><Messages /></PageTransition>} />
+        <Route path="/emergency" element={<PageTransition><Emergency /></PageTransition>} />
+        <Route path="/profile" element={<PageTransition><Profile /></PageTransition>} />
+        <Route path="/favorites" element={<PageTransition><Favorites /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <Router>
+      <div className="app-container">
+        <main>
+          <AnimatedRoutes />
+        </main>
+        <Navbar />
+      </div>
+    </Router>
+  );
+};
+
+export default App;
