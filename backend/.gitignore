@@ -1,0 +1,14 @@
+# Backend Dependencies
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.local
+*.local
+
+# Logs and IDE
+*.log
+.vscode/
+.idea/
+.DS_Store
