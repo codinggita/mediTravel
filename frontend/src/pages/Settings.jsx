@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Save, User, Mail, Lock, ShieldAlert } from 'lucide-react';
+import { ChevronLeft, Save, User, Mail, Lock, ShieldAlert, Palette } from 'lucide-react';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+import ThemeToggle from '../components/ThemeToggle';
 import './Settings.css';
+
 
 const SettingsSchema = Yup.object().shape({
   fullName: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -109,6 +112,20 @@ const Settings = () => {
           </form>
         </div>
       </div>
+
+      <div className="settings-section">
+        <h3><Palette size={18} /> Appearance</h3>
+        <div className="settings-form-card appearance-card">
+          <div className="appearance-item">
+            <div className="appearance-info">
+              <span>Theme Mode</span>
+              <p>Switch between light and dark mode</p>
+            </div>
+            <ThemeToggle />
+          </div>
+        </div>
+      </div>
+
 
       <div className="settings-section danger-zone">
         <h3><ShieldAlert size={18} /> Danger Zone</h3>
