@@ -6,6 +6,8 @@ import { categories, doctors, mockAppointments } from '../data/mockData';
 import SEO from '../components/SEO';
 import './Home.css';
 
+
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -26,14 +28,9 @@ const Home = () => {
           </div>
         </div>
         <div className="header-actions">
-          <button className="icon-btn glass" onClick={() => navigate('/messages')}>
-            <MessageCircle size={20} />
-          </button>
-          <button className="icon-btn glass" onClick={() => navigate('/profile')}>
-            <Bell size={20} />
-            <span className="dot"></span>
-          </button>
         </div>
+
+
       </header>
 
       <section className="search-section">

@@ -20,6 +20,14 @@
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-premium: 0 10px 30px -10px rgba(0, 118, 206, 0.3);
 
+  /* Compatibility with index.css variables */
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #FFFFFF;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+
+
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -40,7 +48,15 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+  /* Compatibility with index.css variables */
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
 }
+
 
 
 * {
@@ -173,3 +189,79 @@ main {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+  background: transparent !important;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-track {
+  width: 52px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 20px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.dark .toggle-track {
+  background: var(--accent);
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sun-icon {
+  color: #FFB800;
+}
+
+.moon-icon {
+  color: #AA3BFF;
+}
+
+/* Global Theme Toggle Position */
+.global-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.global-notify-btn {
+  background: var(--bg) !important;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border) !important;
+}
+
+.global-notify-btn .dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--urgent);
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+}
+
+
+

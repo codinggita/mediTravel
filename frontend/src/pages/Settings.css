@@ -137,45 +137,6 @@
   margin-top: 2px;
 }
 
-/* Theme Toggle Button Styles */
-.theme-toggle-btn {
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
 
-.toggle-track {
-  width: 52px;
-  height: 24px;
-  background: var(--border);
-  border-radius: 20px;
-  padding: 2px;
-  display: flex;
-  align-items: center;
-  transition: background 0.3s ease;
-}
 
-.dark .toggle-track {
-  background: var(--accent);
-}
-
-.toggle-thumb {
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.sun-icon {
-  color: #FFB800;
-}
-
-.moon-icon {
-  color: #AA3BFF;
-}
 

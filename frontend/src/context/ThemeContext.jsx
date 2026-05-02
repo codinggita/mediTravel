@@ -14,11 +14,13 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Apply theme to document element
     const root = window.document.documentElement;
+    console.log('Applying theme:', theme);
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
     
     // Also set color-scheme for native elements
     root.style.colorScheme = theme;
+
     
     localStorage.setItem('meditravel_theme', theme);
   }, [theme]);
