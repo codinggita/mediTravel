@@ -22,7 +22,9 @@ const Profile = () => {
     { icon: <CreditCard size={20} />, label: 'Payments', sub: 'Managed linked cards' },
     { icon: <Bell size={20} />, label: 'Notifications', sub: 'Appointments, Reminders' },
     { icon: <Shield size={20} />, label: 'Security', sub: 'Password, Biometrics' },
+    { icon: <Settings size={20} />, label: 'Account Settings', sub: 'Privacy, Theme, and more', path: '/settings' },
   ];
+
 
   return (
     <div className="profile-page-container page-wrapper">
@@ -34,13 +36,8 @@ const Profile = () => {
       />
       <header className="profile-header">
         <h1>My Profile</h1>
-        <button 
-          className="settings-btn glass" 
-          onClick={() => navigate('/settings')}
-        >
-          <Settings size={20} />
-        </button>
       </header>
+
 
       <section className="profile-user-card card">
         <div className="user-avatar-wrapper">
@@ -81,6 +78,7 @@ const Profile = () => {
             className="setting-item"
             whileHover={{ x: 5 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => opt.path && navigate(opt.path)}
           >
             <div className="setting-icon-wrapper">{opt.icon}</div>
             <div className="setting-info">
@@ -89,6 +87,7 @@ const Profile = () => {
             </div>
             <ChevronRight size={18} color="var(--text-muted)" />
           </motion.div>
+
         ))}
       </section>
 
