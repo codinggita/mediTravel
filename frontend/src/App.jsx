@@ -5,6 +5,8 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Toaster } from 'react-hot-toast';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
+
 
 // Page Imports
 import Onboarding from './pages/Onboarding';
@@ -80,35 +82,38 @@ const App = () => {
 
   return (
     <HelmetProvider>
-      <GoogleOAuthProvider clientId={googleClientId}>
-        <AuthProvider>
-          <Router>
-            <AppLayout />
-            <Toaster
-              position="top-center"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  background: '#1F2937',
-                  color: '#F9FAFB',
-                  borderRadius: '12px',
-                  padding: '14px 20px',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
-                },
-                success: {
-                  iconTheme: { primary: '#10B981', secondary: '#F9FAFB' },
-                },
-                error: {
-                  iconTheme: { primary: '#EF4444', secondary: '#F9FAFB' },
-                },
-              }}
-            />
-          </Router>
-        </AuthProvider>
-      </GoogleOAuthProvider>
+      <ThemeProvider>
+        <GoogleOAuthProvider clientId={googleClientId}>
+          <AuthProvider>
+            <Router>
+              <AppLayout />
+              <Toaster
+                position="top-center"
+                toastOptions={{
+                  duration: 3000,
+                  style: {
+                    background: '#1F2937',
+                    color: '#F9FAFB',
+                    borderRadius: '12px',
+                    padding: '14px 20px',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
+                  },
+                  success: {
+                    iconTheme: { primary: '#10B981', secondary: '#F9FAFB' },
+                  },
+                  error: {
+                    iconTheme: { primary: '#EF4444', secondary: '#F9FAFB' },
+                  },
+                }}
+              />
+            </Router>
+          </AuthProvider>
+        </GoogleOAuthProvider>
+      </ThemeProvider>
     </HelmetProvider>
+
   );
 };
 

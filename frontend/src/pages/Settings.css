@@ -16,7 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: var(--bg);
+
   border: 1px solid var(--border);
   color: var(--text-main);
 }
@@ -34,7 +35,8 @@
 }
 
 .settings-form-card {
-  background: white;
+  background: var(--bg);
+
   border-radius: var(--radius-lg);
   padding: 24px;
   border: 1px solid var(--border);
@@ -113,3 +115,67 @@
 .delete-account-btn:hover {
   background: #FEF2F2;
 }
+
+/* Appearance Styles */
+.appearance-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.appearance-info span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.appearance-info p {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-track {
+  width: 52px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 20px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.dark .toggle-track {
+  background: var(--accent);
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sun-icon {
+  color: #FFB800;
+}
+
+.moon-icon {
+  color: #AA3BFF;
+}
+

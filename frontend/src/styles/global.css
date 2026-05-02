@@ -30,6 +30,19 @@
   --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+:root.dark {
+  --background: #0F172A;
+  --surface: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border: #334155;
+  --primary-light: rgba(0, 118, 206, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -75,8 +88,9 @@ input {
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
-  background: white;
+  background: var(--surface);
   box-shadow: 0 0 100px rgba(0,0,0,0.1);
+
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -99,6 +113,12 @@ main {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
+
+:root.dark .glass {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 
 .glass-dark {
   background: rgba(0, 0, 0, 0.05);
@@ -123,7 +143,8 @@ main {
 }
 
 .card {
-  background: white;
+  background: var(--surface);
+
   border-radius: var(--radius-lg);
   padding: 20px;
   border: 1px solid var(--border);
