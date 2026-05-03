@@ -73,12 +73,12 @@ const AppLayout = () => {
   return (
     <div className="app-container">
       <div className="global-actions">
-        <ThemeToggle />
         <button className="icon-btn glass global-notify-btn" onClick={() => window.location.href='/profile'}>
           <Bell size={20} />
           <span className="dot"></span>
         </button>
       </div>
+
       <main>
 
         <AnimatedRoutes />
