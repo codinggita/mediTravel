@@ -5,20 +5,20 @@
 }
 
 .home-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   padding: 12px 0;
   width: 100%;
 }
 
 .user-profile {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
 }
+
 
 
 .user-profile img {
