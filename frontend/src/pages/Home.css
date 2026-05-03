@@ -8,15 +8,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  padding: 12px 0;
+  width: 100%;
 }
 
 .user-profile {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
 }
+
 
 .user-profile img {
   width: 44px;
