@@ -14,7 +14,7 @@ const Favorites = () => {
       specialty: 'Cardiologist',
       location: 'Bangkok, Thailand',
       rating: 4.9,
-      image: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&q=80&w=200'
+      image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=200'
     },
     {
       id: 3,
