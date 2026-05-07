@@ -160,6 +160,13 @@
   gap: 12px;
 }
 
+@media (min-width: 769px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}
+
 .category-pill {
   padding: 12px 8px;
   border-radius: var(--radius-md);
@@ -174,9 +181,16 @@
 }
 
 .doctor-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 16px;
+}
+
+@media (min-width: 769px) {
+  .doctor-list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
 }
 
 .doctor-card {

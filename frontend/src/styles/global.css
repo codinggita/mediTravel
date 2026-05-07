@@ -100,7 +100,7 @@ input {
 
 /* Base Layout */
 .app-container {
-  max-width: 480px; 
+  max-width: 1200px; 
   margin: 0 auto;
   min-height: 100vh;
   position: relative;

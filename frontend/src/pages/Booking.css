@@ -73,6 +73,13 @@
   padding-bottom: 8px;
 }
 
+@media (min-width: 769px) {
+  .dates-scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
 .date-chip {
   flex: 0 0 65px;
   height: 80px;
@@ -110,6 +117,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+}
+
+@media (min-width: 769px) {
+  .times-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
 }
 
 .time-chip {
